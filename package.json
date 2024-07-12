@@ -1,0 +1,23 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "axios": "^1.7.2",
+    "bullmq": "^5.8.2",
+    "dotenv": "^16.4.5",
+    "email-reply-parser": "^1.6.0",
+    "emailjs-mime-parser": "^2.0.7",
+    "mailparser": "^3.7.1",
+    "mimeparser": "^0.3.8",
+    "openai": "^4.52.1"
+  }
+}
