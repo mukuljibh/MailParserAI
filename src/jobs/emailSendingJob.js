@@ -1,15 +1,17 @@
 import nodemailer from "nodemailer";
+import dotenv from 'dotenv'
 
+dotenv.config({ path: '../../credential.env' });
 const emailSendingJob = async (aiResult, email) => {
     var transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "mukulbhardwaj966@gmail.com",
-            pass: "famy rafw ytap ebgg",
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD,
         },
     });
     var mailOptions = {
-        from: '"Mukul bhardwaj" < mukulbhardwaj966@gmail.com>',
+        from: '"Mukul bhardwaj" <mukulbhardwaj966@gmail.com>',
         to: `${email}`,
         subject: "Re: Regarding customer Privious message",
         text: "hello world",
