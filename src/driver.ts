@@ -1,11 +1,11 @@
 import "dotenv/config";
-import { startEmailReader } from "./service/email.service.js";
-import { GMAIL_CONFIG, OUTLOOK_CONFIG } from "./config/imap.js";
+import { startEmailReader } from "./service/email.service";
+import { GMAIL_CONFIG } from "./config/imap";
+import { startAgenda } from "./config/agenda";
 
 const driver = async () => {
   console.log("Fetching the newly send mail", new Date().toString());
   await startEmailReader(GMAIL_CONFIG, "gmail");
-  //await emailReader(OUTLOOK_CONFIG, 'Outlook');
 };
 
-driver();
+startAgenda().then(() => driver());
